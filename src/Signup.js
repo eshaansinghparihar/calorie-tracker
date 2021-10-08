@@ -55,7 +55,7 @@ function Login()
       }
 return(
         <div className="form">
-        <img src={logo}/>
+        <img src={logo} className="logo"/>
         <h2>Create Account</h2>
         <h4>Continue to Calorie Tracker</h4>
         <input name="username" placeholder="Full Name" value={name} onChange={nameChangeHandler}/>   

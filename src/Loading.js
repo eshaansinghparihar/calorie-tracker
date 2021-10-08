@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-
+import logo from './assets/logo.png'
 function Loading()
 {
     return(
         <div>
-            <h1>Loading...</h1>
+            <img src={logo} className="splash"/>
+            <h1>Hog 'N' Jog</h1>
         </div>
+
     )
 }
 export default Loading

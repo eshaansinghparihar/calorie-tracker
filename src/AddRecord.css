@@ -7,13 +7,6 @@
     background-color: #fff;
   }
   
-  img {
-    display: block;
-    width: 80px;
-    margin: 30px auto;
-    box-shadow: 0 5px 10px -7px #333333;
-    border-radius: 50%;
-  }
   h3{
     font-weight: 300;
   }

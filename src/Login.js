@@ -34,7 +34,7 @@ function Login()
       }
 return(
         <div className="form">
-        <img src={logo}/>
+        <img src={logo} className="logo"/>
         <h2>Sign In</h2>
         <h4>Continue to Calorie Tracker</h4>   
         <input type="email" name="email" placeholder="Email" value={email} onChange={emailChangeHandler}/>
