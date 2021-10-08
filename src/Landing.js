@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore ,doc, onSnapshot} from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
 import firebaseConfig from './config';
+import Loading from "./Loading";
+import Greetings from "./Greeting";
+import AddRecord from "./AddRecord";
+import Activities from "./Activities";
 
 export default function Landing({user})
 {
@@ -20,9 +25,55 @@ export default function Landing({user})
     useEffect(()=>{
         readData()
     },uid)
+    const notifyDeleteSuccess=()=>
+    {
+        toast.error('Activity Deleted Successfully !', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
+
+    const notifyRecordAdditionSuccess=()=>
+    {
+        toast.success('Activity Added Successfully !', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+    }
+    
     return(
-        <div>
-            <h1>Hello {data.displayName}</h1>
-        </div>
+                (data.displayName)?
+                <div>
+                <ToastContainer
+                position="top-left"
+                autoClose={1500}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
+                <Greetings data={data}/>
+                <AddRecord data={data} notifyRecordAdditionSuccess={notifyRecordAdditionSuccess}/>
+                {data.activity.map(activity=>
+                    <Activities activity={activity} user={user} notifyDeleteSuccess={notifyDeleteSuccess}/>
+                ).reverse()}
+                </div>
+                :
+                <Loading/>
+            
+
     )
 }

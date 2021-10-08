@@ -14,10 +14,11 @@
     box-shadow: 0 5px 10px -7px #333333;
     border-radius: 50%;
   }
-  h2{
-    font-weight: 300;
+  h1{
+    font-weight: 500;
+    color:#F4B400
   }
-  h4{
+  h2{
     font-weight: 200;
   }
 @media screen and (max-width:480px) {
@@ -37,30 +38,15 @@
 }
   .form {
     background-color: #ffffff;
-    margin: 10vh auto 10vh auto;
+    margin: 5vh auto 5vh auto;
     padding: 30px;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 2px 10px -3px #333;
     text-align: center;
   }
-  
-  input {
-    border-radius: 100px;
-    padding: 10px 15px;
-    width: 80%;
-    border: 1px solid #D9D9D9;
-    outline: none;
-    display: block;
-    margin: 20px auto 20px auto;
-  }
-  .error{
-      color:red;
-      font-size: 14px;
-      font-weight: 500;
-  }
-  .login {
-    font-weight: 300;
+  .signout {
+    font-weight: 200;
     border-radius: 100px;
     border: none;
     background: #1a73e8;
@@ -68,22 +54,16 @@
     padding: 10px;
     color: #FFFFFF;
     margin-top: 25px;
+    font-size:16px;
     box-shadow: 0 2px 10px -3px #719BE6;
     display: block;
     margin: 55px auto 10px auto;
   }
-  .login:hover{
+  .signout:hover{
     box-shadow: 0 4px 8px 0px #719BE6;
   }
-  
-  a {
-    text-align: center;
-    margin-top: 30px;
-    color: #719BE6;
-    text-decoration: none;
-    padding: 5px;
-    display: inline-block;
-  }
-  
-  
-  
+  .error{
+    color:red;
+    font-size: 14px;
+    font-weight: 500;
+}

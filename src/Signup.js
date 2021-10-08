@@ -62,7 +62,7 @@ return(
         <input type="email" name="email" placeholder="Email" value={email} onChange={emailChangeHandler}/>
         <input type="password" name="Password" placeholder="Password" value={password} onChange={passwordChangeHandler}/>
         {error && <p className="error">{error}</p>}
-        <button onClick={handleSubmit}>Create Account</button>
+        <button className="login" onClick={handleSubmit}>Create Account</button>
         <Link to="/login">
                 {"Already Have An Account ?"}
         </Link>

@@ -14,17 +14,20 @@ function App() {
   const auth = getAuth();
   useEffect(()=>{
     onAuthStateChanged(auth,(user)=>{
-      if(user)
+      if(user!=={})
       {
-        console.log(user)
         setUser(user);
+      }
+      else
+      {
+        setUser({});
       }
     })
   },[])
   return (
     <BrowserRouter>
     <div className="App">
-    {user?
+    {user!==null?
     <Switch>
     <Route path='/' >
     <Landing user={user}/>
