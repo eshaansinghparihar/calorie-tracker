@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore ,doc, onSnapshot} from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
-import firebaseConfig from './config';
 import Loading from "./Loading";
 import Greetings from "./Greeting";
 import AddRecord from "./AddRecord";
@@ -67,7 +64,7 @@ export default function Landing({user})
                 />
                 <Greetings data={data}/>
                 <AddRecord data={data} notifyRecordAdditionSuccess={notifyRecordAdditionSuccess}/>
-                {data.activity.map(activity=>
+                {data.activity?.map(activity=>
                     <Activities activity={activity} user={user} notifyDeleteSuccess={notifyDeleteSuccess}/>
                 ).reverse()}
                 </div>

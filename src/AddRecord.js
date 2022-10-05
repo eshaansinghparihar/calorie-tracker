@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import './AddRecord.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { initializeApp } from 'firebase/app';
+// import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, updateDoc, arrayUnion } from "firebase/firestore";
-import firebaseConfig from "./config";
+// import firebaseConfig from "./config";
 
 function AddRecord({data,notifyRecordAdditionSuccess}){
     const [query,setQuery]=useState('')
@@ -11,7 +11,7 @@ function AddRecord({data,notifyRecordAdditionSuccess}){
     const [error,setError]=useState('')
 
     const uid=data.uid
-    const app=initializeApp(firebaseConfig);
+    // const app=initializeApp(firebaseConfig);
     const db=getFirestore();
     const activityRef = doc(db, "users", uid);
 
@@ -77,7 +77,7 @@ function AddRecord({data,notifyRecordAdditionSuccess}){
     <div className="form">
         {error && <p className="error">{error}</p>}
         <textarea placeholder="Add You're Hogs and Jogs Here !" value={query} onChange={queryHandler}></textarea>
-        <select value={select} onChange={handleSelectChange}> //set value here
+        <select value={select} onChange={handleSelectChange}>
                 <option value="nutrients">Food</option>
                 <option value="exercise">Exercise</option>
         </select>

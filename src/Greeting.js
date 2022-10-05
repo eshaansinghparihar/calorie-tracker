@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './Greeting.css';
 import { getAuth, signOut } from "firebase/auth";
-import { getFirestore ,doc, onSnapshot} from "firebase/firestore";
+// import { getFirestore ,doc, onSnapshot} from "firebase/firestore";
 
 function Greetings({data})
 {
@@ -27,10 +27,12 @@ function Greetings({data})
     }
     
     let activities=data.activity
-    activities.map(activity=>
-    {
-    calorieBalance=calorieBalance+activity.calories
-    })
+    if(activities){
+        activities.map((activity)=>
+        {
+        calorieBalance=calorieBalance+activity.calories
+        })
+    }
     
     return(
         <div className="form">
